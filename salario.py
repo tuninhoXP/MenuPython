@@ -2,6 +2,7 @@
 import time
 loop = True
 
+#PROGRAMAS:
 def calcularsalario():
     global loop
     salario = float(input("DIGITE SEU SALÁRIO: "))
@@ -14,7 +15,6 @@ def calcularsalario():
         loop = False
         return loop
     return sh
-
 
 def calcularfaltas():
     atrasos = int(input("QUANTAS FALTAS VOCÊ TEM?"))
@@ -45,6 +45,23 @@ def calcularLiberade():
     if finalizar == 1:
         loop = False
         return loop
+    
+def calcularmedia():
+    global loop
+    nota1 = float(input("NOTA 1: "))
+    nota2 = float(input("NOTA 2: "))
+    nota3 = float(input("NOTA 3: "))
+    nota4 = float(input("NOTA 4: "))
+    media = (nota1 + nota2 + nota3 + nota4 ) /4
+    print("SUA MÉDIA É: ",media)
+    finalizar = int(input("DESEJA FINALIZAR O PROGRAMA? 1 = SIM"))
+    if finalizar == 1:
+        loop = False
+        return loop
+
+
+
+
 
 while loop == True:
 
@@ -52,13 +69,15 @@ while loop == True:
     print("Bem vindo aos meus programas!")
     time.sleep(2)
     selecionarprograma = int(
-        input("1 = CALCULAR SALARIO / 2 = CALCULAR FALTAS  / 3 = CALCULARLIBERDADE  "))
+        input("1 = CALCULAR SALARIO / 2 = CALCULAR FALTAS  / 3 = CALCULARLIBERDADE / 4 = CALCULAR MÉDIA "))
     if selecionarprograma == 1:
         calcularsalario()
     elif selecionarprograma == 2:
         calcularfaltas()
     elif selecionarprograma == 3:
         calcularLiberade()
+    elif selecionarprograma == 4:
+        calcularmedia()
     else: print("RESPOSTA INVÁLIDA")
 
 
